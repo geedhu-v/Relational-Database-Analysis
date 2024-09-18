@@ -35,12 +35,12 @@ select concat(LastName,', ',FirstName,', ',MiddleName) as FullName from Person.P
 
 select distinct JobTitle from HumanResources.Employee order by JobTitle desc
 
--- Q8. Display employee id as “ID”, job title as “Job Title” and HireDate as “Date Hired”
+-- Q8. Display employee id as â€œIDâ€, job title as â€œJob Titleâ€ and HireDate as â€œDate Hiredâ€
 
 select LoginID as ID,JobTitle as  "Job Title",HireDate as "Date Hired" from HumanResources.Employee
 
--- Q9. Display employee last and first name as “Employee Name”, job title as “Job Title”, 
---hire date as “Date Hired” and sort data by last then first name.
+-- Q9. Display employee last and first name as â€œEmployee Nameâ€, job title as â€œJob Titleâ€, 
+--hire date as â€œDate Hiredâ€ and sort data by last then first name.
 
 select concat(P.LastName,', ',P.FirstName) as "Employee Name",E.JobTitle as "Job title",
 E.HireDate as "Date Hired" from Person.Person P join HumanResources.Employee E 
@@ -60,15 +60,15 @@ VacationHours
 from Person.Person P join HumanResources.Employee E on P.BusinessEntityID = E.BusinessEntityID
 order by VacationHours desc
 
--- Q12. Display the number of sales territories as “Number of Sales Territories”.
+-- Q12. Display the number of sales territories as â€œNumber of Sales Territoriesâ€.
 select count(TerritoryID) as "Number of Sales Territories" from Sales.SalesTerritory
 
--- Q13. Add up the sales year to date for all sales territories and display as “Sum of All Sales”.
+-- Q13. Add up the sales year to date for all sales territories and display as â€œSum of All Salesâ€.
 
 select sum(SalesYTD) as "Sum of ALL Sales" from Sales.SalesTerritory
 
--- Q14. Display sum of all SalesYTD sales as “Sum of All Sales”, average sale as “Average Sale”,
---minimum sale as “Minimum Sale” and maximum sale as “Maximum Sale”.
+-- Q14. Display sum of all SalesYTD sales as â€œSum of All Salesâ€, average sale as â€œAverage Saleâ€,
+--minimum sale as â€œMinimum Saleâ€ and maximum sale as â€œMaximum Saleâ€.
 
 select sum(SalesYTD) as "Sum of ALL Sales", avg(SalesYTD) as "Average Sale",
 min(SalesYTD) as "Minimum Sale",max(SalesYTD) as "Maximum Sale" from Sales.SalesTerritory
@@ -92,17 +92,17 @@ DELETE FROM Person.CountryRegion where CountryRegionCode = 'AND'
 
 select * from Person.CountryRegion where CountryRegionCode = 'AND'
 
---Q18. Display the current date and time as “Current date and time”.
+--Q18. Display the current date and time as â€œCurrent date and timeâ€.
 
 SELECT GETDATE() AS "Current Date and Time"
 
 
---Q19. Display the current month only as “Current month”
+--Q19. Display the current month only as â€œCurrent monthâ€
 
 SELECT MONTH(GETDATE()) AS "Current Month"
 
 
--- Q20. Display today’s date one year from now.
+-- Q20. Display todayâ€™s date one year from now.
 
 SELECT DATEADD(YEAR,+1,GETDATE()) AS "Today's date one year from now"
 
